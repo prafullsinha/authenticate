@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> index </title>
+</head>
+
+<body>
+<h1>this is the index page.</h1>
+    {% if user.is_authenticated %}
+    <h2> your name is: {{ user.username }}</h2>
+    {% else %}
+    <h2> You are not logged in.</h2>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <p>name:<input type="text" name="name"></p>
+        <p>email:<input type="email" name="email"></p>
+        <p>date of birth:<input type="date" name="date of birth"></p>
+        <button type="submit" >Submit</button>
+    </form>
+{{ name }}
+<p>{{ email }}</p>
+
+</body>
+</html>
